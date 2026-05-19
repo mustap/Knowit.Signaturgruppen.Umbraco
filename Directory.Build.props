@@ -1,0 +1,41 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- Build determinism -->
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+
+    <!-- Default test/sample projects out of packing; library projects opt in -->
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package metadata">
+    <Authors>Mustapha Benali</Authors>
+    <Company>Knowit</Company>
+    <Copyright>Copyright © 2026 Knowit</Copyright>
+    <Product>Knowit.Signaturgruppen.Umbraco</Product>
+    <PackageProjectUrl>https://github.com/mustap/Knowit.Signaturgruppen.Umbraco</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mustap/Knowit.Signaturgruppen.Umbraco</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>umbraco;mitid;signaturgruppen;nets-eid-broker;oidc;openid-connect;members;authentication;denmark</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Source link &amp; symbols" Condition="'$(IsPackable)' == 'true'">
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+<Project>
+
+  <!-- Source link only for packable projects. Conditioned in targets so $(IsPackable) is resolved. -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+
+  <!-- Pack the per-project README.md into the .nupkg root for any packable project that has one. -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true' AND Exists('$(MSBuildProjectDirectory)\README.md')">
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

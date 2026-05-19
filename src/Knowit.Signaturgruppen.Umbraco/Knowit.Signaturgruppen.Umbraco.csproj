@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <Description>Signaturgruppen / Nets eID Broker OIDC integration for Umbraco frontend Members. Wires the broker into the Umbraco Members external-login pipeline, with auto-link, claim mapping, step-up support, and a pluggable post-login pipeline.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Knowit.Signaturgruppen.Umbraco.Tests" />
+    <InternalsVisibleTo Include="Knowit.Signaturgruppen.Umbraco.Akait" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.Security
+@using Umbraco.Cms.Web.Website.Controllers
+@using Umbraco.Extensions
+@inject IMemberExternalLoginProviders MemberExternalLoginProviders
+@inject IMemberSignInManager MemberSignInManager
+@{
+    Layout = null;
+    var providers = await MemberExternalLoginProviders.GetMemberProvidersAsync();
+}
+
+<!doctype html>
+<html lang="da">
+<head>
+    <meta charset="utf-8" />
+    <title>Log ind</title>
+</head>
+<body>
+    <h1>Log ind</h1>
+
+    @foreach (var login in providers)
+    {
+        using (Html.BeginUmbracoForm<UmbExternalLoginController>(nameof(UmbExternalLoginController.ExternalLogin)))
+        {
+            <button type="submit"
+                    name="provider"
+                    value="@login.ExternalLoginProvider.AuthenticationType">
+                Log ind med @login.AuthenticationScheme.DisplayName
+            </button>
+        }
+    }
+
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        <p>Du er logget ind som <strong>@User.Identity.Name</strong>.</p>
+
+        var medlemsnummer = User.FindFirst("akait.medlemsnummer")?.Value;
+        if (!string.IsNullOrEmpty(medlemsnummer))
+        {
+            <p>Medlemsnummer: <code>@medlemsnummer</code></p>
+        }
+
+        using (Html.BeginForm("Logout", "MemberLogin", FormMethod.Post))
+        {
+            <button type="submit">Log ud</button>
+        }
+    }
+</body>
+</html>

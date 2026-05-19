@@ -1,0 +1,50 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Label="Umbraco (target: 13.x LTS)">
+    <!--
+      Floor at a patched 13.x to satisfy NuGet audit (NU1902/NU1903) and to keep the centrally
+      pinned transitive Web.Website aligned with the meta-package's demand in the sample site.
+    -->
+    <PackageVersion Include="Umbraco.Cms" Version="[13.14.0,14.0.0)" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="[13.14.0,14.0.0)" />
+  </ItemGroup>
+
+  <ItemGroup Label="ASP.NET Core authentication">
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.11" />
+    <!--
+      Pin Microsoft.IdentityModel.Protocols.OpenIdConnect above 7.5.1; that release shipped a
+      System.Text.Json-based OpenIdConnectConfiguration deserializer that silently drops the
+      token_endpoint field for some discovery documents (dotnet/aspnetcore#55355), which makes
+      the OIDC code-exchange call fail with an "invalid request URI" error at runtime. 7.7.1
+      is the known-good version pulled into transitive consumers via CPM transitive pinning.
+    -->
+    <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="7.7.1" />
+  </ItemGroup>
+
+  <ItemGroup Label="HTTP client + resilience">
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.10.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="OAuth client-credentials token management">
+    <PackageVersion Include="IdentityModel.AspNetCore" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Source link">
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Testing">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.11" />
+  </ItemGroup>
+
+</Project>

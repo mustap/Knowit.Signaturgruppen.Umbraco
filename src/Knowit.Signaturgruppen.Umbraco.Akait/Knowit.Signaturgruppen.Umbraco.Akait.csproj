@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <Description>AKAIT reference consumer for Knowit.Signaturgruppen.Umbraco. Implements the "MitID SubjectId → medlemsnummer" flow against the AKAIT MitId v1 API as an IPostLoginHandler.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Knowit.Signaturgruppen.Umbraco\Knowit.Signaturgruppen.Umbraco.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+    <PackageReference Include="IdentityModel.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Knowit.Signaturgruppen.Umbraco.Tests" />
+  </ItemGroup>
+
+</Project>

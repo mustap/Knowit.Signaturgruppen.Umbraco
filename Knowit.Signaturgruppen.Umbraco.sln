@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1470CB5-768F-4FED-9311-E160A37FDC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowit.Signaturgruppen.Umbraco", "src\Knowit.Signaturgruppen.Umbraco\Knowit.Signaturgruppen.Umbraco.csproj", "{441347E5-A2F0-4184-A221-8152C7D2CD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowit.Signaturgruppen.Umbraco.Akait", "src\Knowit.Signaturgruppen.Umbraco.Akait\Knowit.Signaturgruppen.Umbraco.Akait.csproj", "{81938C3D-D3A5-407D-9360-E8709AE08BF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{29453CC1-6514-465E-8F13-3289486DC5C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowit.Signaturgruppen.Umbraco.Tests", "tests\Knowit.Signaturgruppen.Umbraco.Tests\Knowit.Signaturgruppen.Umbraco.Tests.csproj", "{6F3BE67C-E3FB-4244-8F37-6151B918124B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{EDA7B920-B2E3-4606-83BD-DAC451B146EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowit.Signaturgruppen.Umbraco.Sample", "samples\Knowit.Signaturgruppen.Umbraco.Sample\Knowit.Signaturgruppen.Umbraco.Sample.csproj", "{877CB869-691E-4AD2-BB51-9369B6C48473}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{441347E5-A2F0-4184-A221-8152C7D2CD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441347E5-A2F0-4184-A221-8152C7D2CD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441347E5-A2F0-4184-A221-8152C7D2CD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441347E5-A2F0-4184-A221-8152C7D2CD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81938C3D-D3A5-407D-9360-E8709AE08BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81938C3D-D3A5-407D-9360-E8709AE08BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81938C3D-D3A5-407D-9360-E8709AE08BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81938C3D-D3A5-407D-9360-E8709AE08BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3BE67C-E3FB-4244-8F37-6151B918124B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3BE67C-E3FB-4244-8F37-6151B918124B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3BE67C-E3FB-4244-8F37-6151B918124B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3BE67C-E3FB-4244-8F37-6151B918124B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877CB869-691E-4AD2-BB51-9369B6C48473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877CB869-691E-4AD2-BB51-9369B6C48473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877CB869-691E-4AD2-BB51-9369B6C48473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877CB869-691E-4AD2-BB51-9369B6C48473}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{441347E5-A2F0-4184-A221-8152C7D2CD7A} = {A1470CB5-768F-4FED-9311-E160A37FDC55}
+		{81938C3D-D3A5-407D-9360-E8709AE08BF9} = {A1470CB5-768F-4FED-9311-E160A37FDC55}
+		{6F3BE67C-E3FB-4244-8F37-6151B918124B} = {29453CC1-6514-465E-8F13-3289486DC5C0}
+		{877CB869-691E-4AD2-BB51-9369B6C48473} = {EDA7B920-B2E3-4606-83BD-DAC451B146EA}
+	EndGlobalSection
+EndGlobal

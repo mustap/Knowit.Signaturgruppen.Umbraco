@@ -1,0 +1,57 @@
+## .NET
+bin/
+obj/
+out/
+artifacts/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build output
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+TestResults/
+*.binlog
+*.log
+coverage/
+coverage.*
+
+## VS / Rider / VSCode
+.vs/
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+## Packaging
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+nuget.exe
+
+## Umbraco runtime artifacts (sample site, when added)
+umbraco/Data/*.sqlite.db
+umbraco/Data/*.sqlite.db-shm
+umbraco/Data/*.sqlite.db-wal
+umbraco/Data/TEMP/
+umbraco/Logs/
+umbraco/mediafileuploader/
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+## OS
+.DS_Store
+Thumbs.db
+
+## User secrets / credentials
+*.pfx
+*.snk
+secrets/
+*.env
+*.lscache
